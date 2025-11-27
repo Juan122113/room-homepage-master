@@ -44,8 +44,11 @@ body{
     grid-area: main;
     background-image: url(../images/desktop-image-hero-1.jpg);
     min-height: 500px;
-    background-size: cover;
+    /* background-size: cover; */
+    /* background-size: contain; */
+    background-size: 100% 100%;
     background-position: center;
+    background-repeat: no-repeat;
 }
 
 .main__nav{
