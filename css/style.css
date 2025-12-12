@@ -20,7 +20,7 @@ html {
 }
 
 body{
-    font-family: 'League Spartan', sans-serif;
+    font-family: "League Spartan", "Segoe UI", "Trebuchet MS", Arial, sans-serif;
     min-height: 100vh;
 }
 
@@ -47,13 +47,13 @@ body{
 
 .main__hero{
     grid-area: main;
-    background-image: url(../images/desktop-image-hero-1.jpg);
+    background-image: url(../images/mobile-image-hero-1.jpg);
     min-height: 360px;
     /* background-size: cover; */
     /* background-size: contain; */
     background-size: 100% 100%;
-    background-position: center;
-    background-repeat: no-repeat;
+    /* background-position: center; */
+    /* background-repeat: no-repeat; */
 }
 
 .main__nav{
@@ -177,6 +177,7 @@ body{
 }
 
 @media (min-width:768px){
+
     .container{
         width: 85%;
         padding: 70px 0;
@@ -190,6 +191,12 @@ body{
         "main main main main cta cta cta"
         "image1 image1 about about about image2 image2"
         "image1 image1 about about about image2 image2";
+    }
+
+    .main__hero {
+        background-image: url(../images/desktop-image-hero-1.jpg);
+        /* background-size: contain; */
+        /* background-size: cover; */
     }
 
     .main__controls{
@@ -209,12 +216,21 @@ body{
         padding: 0;
         display: grid;
         grid-auto-flow: column;
-        gap: 1em;
+        gap: 3em;
         margin-left: 10%;
+        background-color: transparent;
+        justify-content: start;
+        position: static;
+        /* position: relative; */
+        height: auto;
+    }
+
+    .icon__close {
+        display: none;
     }
 
     .main__list{
-        list-style: none;
+        /* list-style: none; */
     }
 
     .main__link{
