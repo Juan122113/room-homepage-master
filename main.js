@@ -18,7 +18,20 @@ iconClose.addEventListener('click', (e) => {
     mainLinks.style.display = 'none';
 });
 
-window.addEventListener("resize", (e) => {
+// if (window.innerWidth <= 768 ) {
+
+//         console.log("less 768");
+        
+//         iconAngleRight.addEventListener('click', () => {
+
+//             console.log("click iconAngleRight");
+//             // mainHero.style.backgroundImage = navMobImagesUrls[1];
+//             mainHero.style.backgroundImage = "url('../images/mobile-image-hero-2.jpg')";
+//         });
+//     }
+
+// window.addEventListener("load", () => {
+window.addEventListener("resize", () => {
     console.log(window.innerWidth);
 
     if (window.innerWidth <= 768 ) {
@@ -33,3 +46,4 @@ window.addEventListener("resize", (e) => {
         });
     }
 });
+// });
