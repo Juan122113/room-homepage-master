@@ -14,11 +14,11 @@ const navDeskImagesUrls = ["url('../images/desktop-image-hero-1.jpg')", "url('..
 const navMobImagesUrls = ["../images/mobile-image-hero-1.jpg", "url('../images/mobile-image-hero-2.jpg')", "../images/mobile-image-hero-3.jpg"];
 // console.log(width);
 
-iconHamburger.addEventListener('click', (e) => {
+iconHamburger.addEventListener('click', () => {
     mainLinks.style.display = 'flex';
 });
 
-iconClose.addEventListener('click', (e) => {
+iconClose.addEventListener('click', () => {
     mainLinks.style.display = 'none';
 });
 
@@ -34,13 +34,7 @@ iconClose.addEventListener('click', (e) => {
 //         });
 //     }
 
-// window.addEventListener("load", () => {
-// if (window.innerWidth <= 768 ) {
-window.addEventListener("resize", () => {
-    console.log(window.innerWidth);
-
-    // currentWidth = window.innerWidth;
-
+function handleSlide() {
     if (window.innerWidth <= 768 ) {
 
         console.log("less 768");
@@ -53,19 +47,47 @@ window.addEventListener("resize", () => {
             mainHero.style.backgroundImage = "url('../images/mobile-image-hero-2.jpg')";
         });
     }
-});
+}
+
+// window.addEventListener("load", () => {
+// if (window.innerWidth <= 768 ) {
+window.addEventListener("load", handleSlide);
+window.addEventListener("resize", handleSlide);
+// window.addEventListener("resize", () => {
+//     console.log(window.innerWidth);
+//     console.log(currentWidth);
+
+//     // currentWidth = window.innerWidth;
+
+//     if (window.innerWidth <= 768 ) {
+
+//         console.log("less 768");
+//         // console.log(window.innerWidth);
+        
+//         iconAngleRight.addEventListener('click', () => {
+
+//             console.log("click iconAngleRight");
+//             // mainHero.style.backgroundImage = navMobImagesUrls[1];
+//             mainHero.style.backgroundImage = "url('../images/mobile-image-hero-2.jpg')";
+//         });
+//     }
+// });
 // });
 // }
 console.log(currentWidth);
 
-if (currentWidth <= 768) {
+// if (currentWidth <= 768) {
 
-        console.log("less 768");
+//         console.log("less 768");
+
+//     // window.addEventListener("resize", () => {
         
-        iconAngleRight.addEventListener('click', () => {
+//         iconAngleRight.addEventListener('click', () => {
 
-            console.log("click iconAngleRight");
-            // mainHero.style.backgroundImage = navMobImagesUrls[1];
-            mainHero.style.backgroundImage = "url('../images/mobile-image-hero-2.jpg')";
-        });
-    }
+//             console.log("click iconAngleRight");
+//             // mainHero.style.backgroundImage = navMobImagesUrls[1];
+//             mainHero.style.backgroundImage = "url('../images/mobile-image-hero-2.jpg')";
+//         });
+    // }
+
+}
