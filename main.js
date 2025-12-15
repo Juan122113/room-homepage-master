@@ -8,10 +8,12 @@ const iconAngleRight = document.querySelector('[data-js="icon-angle-right"]');
 
 let currentWidth = document.documentElement.clientWidth;
 
+let indexImages = 0;
+
 console.log(currentWidth);
 
 const navDeskImagesUrls = ["url('../images/desktop-image-hero-1.jpg')", "url('../images/desktop-image-hero-2.jpg')", "../images/desktop-image-hero-3.jpg"];
-const navMobImagesUrls = ["../images/mobile-image-hero-1.jpg", "url('../images/mobile-image-hero-2.jpg')", "../images/mobile-image-hero-3.jpg"];
+const navMobImagesUrls = ["url('../images/mobile-image-hero-1.jpg')", "url('../images/mobile-image-hero-2.jpg')", "url('../images/mobile-image-hero-3.jpg')"];
 // console.log(width);
 
 iconHamburger.addEventListener('click', () => {
@@ -35,7 +37,7 @@ iconClose.addEventListener('click', () => {
 //     }
 
 function handleSlide() {
-    if (window.innerWidth <= 768 ) {
+    // if (window.innerWidth < 768 ) {
 
         console.log("less 768");
         // console.log(window.innerWidth);
@@ -44,10 +46,67 @@ function handleSlide() {
 
             console.log("click iconAngleRight");
             // mainHero.style.backgroundImage = navMobImagesUrls[1];
-            mainHero.style.backgroundImage = "url('../images/mobile-image-hero-2.jpg')";
+            // mainHero.style.backgroundImage = "url('../images/mobile-image-hero-2.jpg')";
+            // indexImages++;
+            // while (indexImages < 2) {
+            //     indexImages++;
+            // }
+            
+            if (indexImages < 3) {
+                indexImages++;
+            } else if (indexImages == 3) {
+                indexImages = 0;
+            }
+            
+            console.log(indexImages);
+
+            if (window.innerWidth < 768 ) {
+                mainHero.style.backgroundImage = navMobImagesUrls[indexImages];
+            }
         });
-    }
+
+        iconAngleLeft.addEventListener('click', () => {
+
+            console.log("click iconAngleLeft");
+            // mainHero.style.backgroundImage = navMobImagesUrls[1];
+            // mainHero.style.backgroundImage = "url('../images/mobile-image-hero-2.jpg')";
+            // indexImages++;
+            // while (indexImages < 2) {
+            //     indexImages++;
+            // }
+
+            if (indexImages > 0 ) {
+                indexImages--;
+            } else if (indexImages == 0) {
+                indexImages = 3;
+                
+            }
+            
+            console.log(indexImages);
+        });
+    // } else {
+
+        console.log("more 768")
+        // iconAngleRight.addEventListener('click', () => {
+
+        //     console.log("click iconAngleRight");
+        //     // mainHero.style.backgroundImage = navMobImagesUrls[1];
+        //     mainHero.style.backgroundImage = "url('../images/desktop-image-hero-2.jpg')";
+        // });
+    // }
 }
+        
+    // } else {
+
+        // console.log("more 768")
+        // iconAngleRight.addEventListener('click', () => {
+
+        //     console.log("click iconAngleRight");
+        //     // mainHero.style.backgroundImage = navMobImagesUrls[1];
+        //     mainHero.style.backgroundImage = "url('../images/desktop-image-hero-2.jpg')";
+        // });
+    // }
+// }
 
 // window.addEventListener("load", () => {
 // if (window.innerWidth <= 768 ) {
@@ -90,4 +149,4 @@ console.log(currentWidth);
 //         });
     // }
 
-}
+// }
