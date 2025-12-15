@@ -11,8 +11,9 @@ let currentWidth = document.documentElement.clientWidth;
 let indexImages = 0;
 
 console.log(currentWidth);
+console.log(indexImages);
 
-const navDeskImagesUrls = ["url('../images/desktop-image-hero-1.jpg')", "url('../images/desktop-image-hero-2.jpg')", "../images/desktop-image-hero-3.jpg"];
+const navDeskImagesUrls = ["url('../images/desktop-image-hero-1.jpg')", "url('../images/desktop-image-hero-2.jpg')", "url('../images/desktop-image-hero-3.jpg')"];
 const navMobImagesUrls = ["url('../images/mobile-image-hero-1.jpg')", "url('../images/mobile-image-hero-2.jpg')", "url('../images/mobile-image-hero-3.jpg')"];
 // console.log(width);
 
@@ -36,34 +37,38 @@ iconClose.addEventListener('click', () => {
 //         });
 //     }
 
-function handleSlide() {
+function handleSlide(e) {
     // if (window.innerWidth < 768 ) {
 
-        console.log("less 768");
+        // console.log("less 768");
+        console.log(e);
+        console.log(e.type);
         // console.log(window.innerWidth);
         
-        iconAngleRight.addEventListener('click', () => {
+        // iconAngleRight.addEventListener('click', () => {
 
-            console.log("click iconAngleRight");
-            // mainHero.style.backgroundImage = navMobImagesUrls[1];
-            // mainHero.style.backgroundImage = "url('../images/mobile-image-hero-2.jpg')";
-            // indexImages++;
-            // while (indexImages < 2) {
-            //     indexImages++;
-            // }
+        //     console.log("click iconAngleRight");
+        //     // mainHero.style.backgroundImage = navMobImagesUrls[1];
+        //     // mainHero.style.backgroundImage = "url('../images/mobile-image-hero-2.jpg')";
+        //     // indexImages++;
+        //     // while (indexImages < 2) {
+        //     //     indexImages++;
+        //     // }
             
-            if (indexImages < 3) {
-                indexImages++;
-            } else if (indexImages == 3) {
-                indexImages = 0;
-            }
+        //     if (indexImages < 2) {
+        //         indexImages++;
+        //     } else if (indexImages == 2) {
+        //         indexImages = 0;
+        //     }
             
-            console.log(indexImages);
+        //     console.log(indexImages);
 
-            if (window.innerWidth < 768 ) {
-                mainHero.style.backgroundImage = navMobImagesUrls[indexImages];
-            }
-        });
+        //     if (window.innerWidth < 768 ) {
+        //         mainHero.style.backgroundImage = navMobImagesUrls[indexImages];
+        //     } else {
+        //         mainHero.style.backgroundImage = navDeskImagesUrls[indexImages];
+        //     }
+        // });
 
         iconAngleLeft.addEventListener('click', () => {
 
@@ -78,7 +83,7 @@ function handleSlide() {
             if (indexImages > 0 ) {
                 indexImages--;
             } else if (indexImages == 0) {
-                indexImages = 3;
+                indexImages = 2;
                 
             }
             
@@ -86,7 +91,7 @@ function handleSlide() {
         });
     // } else {
 
-        console.log("more 768")
+        // console.log("more 768")
         // iconAngleRight.addEventListener('click', () => {
 
         //     console.log("click iconAngleRight");
@@ -110,8 +115,9 @@ function handleSlide() {
 
 // window.addEventListener("load", () => {
 // if (window.innerWidth <= 768 ) {
-window.addEventListener("load", handleSlide);
-window.addEventListener("resize", handleSlide);
+// window.addEventListener("load", handleSlide, {once: true});
+// window.addEventListener("resize", handleSlide, {once: true});
+window.addEventListener("resize", handleSlide, {once: true});
 // window.addEventListener("resize", () => {
 //     console.log(window.innerWidth);
 //     console.log(currentWidth);
@@ -150,3 +156,57 @@ console.log(currentWidth);
     // }
 
 // }
+
+// window.addEventListener("load", () => {
+//     window.addEventListener("resize", () => {
+//          iconAngleRight.addEventListener('click', () => {
+
+//             console.log("click iconAngleRight");
+//             // mainHero.style.backgroundImage = navMobImagesUrls[1];
+//             // mainHero.style.backgroundImage = "url('../images/mobile-image-hero-2.jpg')";
+//             // indexImages++;
+//             // while (indexImages < 2) {
+//             //     indexImages++;
+//             // }
+            
+//             if (indexImages < 2) {
+//                 indexImages++;
+//             } else if (indexImages == 2) {
+//                 indexImages = 0;
+//             }
+            
+//             console.log(indexImages);
+
+//             if (window.innerWidth < 768 ) {
+//                 mainHero.style.backgroundImage = navMobImagesUrls[indexImages];
+//             } else {
+//                 mainHero.style.backgroundImage = navDeskImagesUrls[indexImages];
+//             }
+//         });
+//     });
+// });
+
+iconAngleRight.addEventListener('click', () => {
+
+            console.log("click iconAngleRight");
+            // mainHero.style.backgroundImage = navMobImagesUrls[1];
+            // mainHero.style.backgroundImage = "url('../images/mobile-image-hero-2.jpg')";
+            // indexImages++;
+            // while (indexImages < 2) {
+            //     indexImages++;
+            // }
+            
+            if (indexImages < 2) {
+                indexImages++;
+            } else if (indexImages == 2) {
+                indexImages = 0;
+            }
+            
+            console.log(indexImages);
+
+            if (window.innerWidth < 768 ) {
+                mainHero.style.backgroundImage = navMobImagesUrls[indexImages];
+            } else {
+                mainHero.style.backgroundImage = navDeskImagesUrls[indexImages];
+            }
+        });
