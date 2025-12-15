@@ -191,12 +191,16 @@ body{
         "main main main main cta cta cta"
         "image1 image1 about about about image2 image2"
         "image1 image1 about about about image2 image2";
+        max-width: 100vw;
+        /* min-height: auto; */
+        min-height: 100vh;
     }
 
     .main__hero {
         background-image: url(../images/desktop-image-hero-1.jpg);
         /* background-size: contain; */
         /* background-size: cover; */
+        height: 33.5rem;
     }
 
     .main__controls{
@@ -236,5 +240,9 @@ body{
     .main__link{
         color: var(--White);
         text-decoration: none;
+    }
+
+    .main__link::before:hover {
+        cursor: pointer;
     }
 }
