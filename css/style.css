@@ -239,31 +239,41 @@ body{
 
     .main__link{
         color: var(--White);
-        text-decoration: none;
+        /* text-decoration: none; */
         position: relative;
+        /* transition: width 2s ease-in-out; */
     }
 
     /* .main__link:hover{
         cursor: pointer;
     } */
 
-    .main__link:hover::before {
+    .main__link::before {
+        transition: width 1s linear;
+        /* transition: width 2s ease-in-out; */
         cursor: pointer;
         content: "";
         /* color: white; */
         /* width: 1rem; */
-        width: 100%;
+        width: 0;
         height: .15rem;
         background-color: white;
         position: absolute;
         top: 1.3rem;
         /* transform: translateX(.5rem); */
-        /* opacity: 1; */
-        transition: all 2s ease-out;
+        /* opacity: 0; */
+        /* transition: width 2s ease-in-out; */
+        left: 50%;
+        /* right: 50%; */
     }
 
     /* .main__link:hover {
         text-decoration: underline white .15rem;
         transition: text-decoration 4s;
     }  */
+
+    .main__link:hover::before {
+        /* opacity: 1; */
+        width: 100%;
+    }
 }
