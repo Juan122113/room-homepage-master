@@ -5,9 +5,13 @@ const iconClose = document.querySelector('[data-js="icon-close"]');
 const iconAngleLeft = document.querySelector('[data-js="icon-angle-left"]');
 const iconAngleRight = document.querySelector('[data-js="icon-angle-right"]');
 
+const isGithubPages = location.hostname.includes("github.io");
+
+let urlBeginning = isGithubPages ? "/room-homepage-master" : "";
+
 let indexImages = 0;
 
-const navDeskImagesUrls = ["url('/room-homepage-master/images/desktop-image-hero-1.jpg')", "url('/room-homepage-master/images/desktop-image-hero-2.jpg')", "url('/room-homepage-master/images/desktop-image-hero-3.jpg')"];
+const navDeskImagesUrls = [`url('${urlBeginning}/images/desktop-image-hero-1.jpg')`, "url('/room-homepage-master/images/desktop-image-hero-2.jpg')", "url('/room-homepage-master/images/desktop-image-hero-3.jpg')"];
 const navMobImagesUrls = ["url('/room-homepage-master/images/mobile-image-hero-1.jpg')", "url('/room-homepage-master/images/mobile-image-hero-2.jpg')", "url('/room-homepage-master/images/mobile-image-hero-3.jpg')"];
 
 iconHamburger.addEventListener('click', () => {
