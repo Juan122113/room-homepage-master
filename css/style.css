@@ -29,7 +29,7 @@ body{
     max-width: 1400px;
     margin: 0 auto;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(5, max-content);
+    grid-template-rows: repeat(5, 1fr);
     grid-template-areas: 
     "main"
     "cta"
@@ -200,7 +200,9 @@ body{
         background-image: url(../images/desktop-image-hero-1.jpg);
         /* background-size: contain; */
         /* background-size: cover; */
-        height: 33.5rem;
+        /* height: 33.5rem; */
+        height: 100%;
+        min-height: 100%;
     }
 
     .main__controls{
@@ -242,9 +244,9 @@ body{
         /* text-decoration: none; */
         position: relative;
         /* transition: width 2s ease-in-out; */
-        display: flex;
+        /* display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: center; */
     }
 
     /* .main__link:hover{
@@ -252,7 +254,7 @@ body{
     } */
 
     .main__link::before {
-        transition: border 1s linear;
+        /* transition: border 1s linear; */
         /* transition: width 1s ease-in-out; */
         cursor: pointer;
         content: "";
@@ -262,6 +264,8 @@ body{
         height: .15rem;
         background-color: white;
         position: absolute;
+        left: 0;
+        right: 0;
         top: 1.3rem;
         /* transform: translateX(.5rem); */
         /* opacity: 0; */
@@ -270,14 +274,17 @@ body{
         /* right: 50%; */
         /* border-top: 0 solid transparent;
         border-bottom: 0 solid transparent; */
-        border-right: 0 solid white;
-        border-left: 0 solid white;
+        /* border-right: 0 solid white;
+        border-left: 0 solid white; */
         /* display: flex;
         align-items: center;
         justify-content: center;
         justify-items: center;
         justify-self: center; */
         /* border: 0 solid white; */
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: transform .3s ease;
     }
 
     /* .main__link:hover {
@@ -288,12 +295,13 @@ body{
     .main__link:hover::before {
         /* opacity: 1; */
         /* width: 100%; */
-        border-left: 1.5rem solid white;
-        border-right: 1.5rem solid white;
+        /* border-left: 1.5rem solid white;
+        border-right: 1.5rem solid white; */
         /* border-bottom: .1rem solid white; */
         /* left: 50%; */
         /* right: 50%; */
         /* border: .1rem solid white; */
+        transform: scaleX(1);
     }
 
     .main__cta {
