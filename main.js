@@ -7,8 +7,8 @@ const iconAngleRight = document.querySelector('[data-js="icon-angle-right"]');
 
 let indexImages = 0;
 
-const navDeskImagesUrls = ["url('../images/desktop-image-hero-1.jpg')", "url('../images/desktop-image-hero-2.jpg')", "url('../images/desktop-image-hero-3.jpg')"];
-const navMobImagesUrls = ["url('../images/mobile-image-hero-1.jpg')", "url('../images/mobile-image-hero-2.jpg')", "url('../images/mobile-image-hero-3.jpg')"];
+const navDeskImagesUrls = ["url('/images/desktop-image-hero-1.jpg')", "url('/images/desktop-image-hero-2.jpg')", "url('/images/desktop-image-hero-3.jpg')"];
+const navMobImagesUrls = ["url('/images/mobile-image-hero-1.jpg')", "url('/images/mobile-image-hero-2.jpg')", "url('/images/mobile-image-hero-3.jpg')"];
 
 iconHamburger.addEventListener('click', () => {
     mainLinks.style.display = 'flex';
