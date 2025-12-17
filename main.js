@@ -7,10 +7,10 @@ const iconAngleRight = document.querySelector('[data-js="icon-angle-right"]');
 const mainTitle = document.querySelector('[data-js="main-title"]');
 const mainParagraph = document.querySelector('[data-js="main-paragraph"]');
 
-const isGithubPages = location.hostname.includes("github.io");
+// const isGithubPages = location.hostname.includes("github.io");
 
 // basePath para que funcione tanto en local como en GitHub Pages
-const urlBeginning = isGithubPages ? "/room-homepage-master" : "";
+// const urlBeginning = isGithubPages ? "/room-homepage-master" : "";
 
 let indexImages = 0;
 
@@ -64,7 +64,7 @@ iconAngleRight.addEventListener('click', () => {
             
     if (indexImages < 2) {
         indexImages++;
-    } else if (indexImages == 2) {
+    } else if (indexImages === 2) {
         indexImages = 0;
     }
 
@@ -79,7 +79,7 @@ iconAngleLeft.addEventListener('click', () => {
 
     if (indexImages > 0 ) {
         indexImages--;
-    } else if (indexImages == 0) {
+    } else if (indexImages === 0) {
         indexImages = 2;
     }
 

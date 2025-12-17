@@ -26,7 +26,7 @@ body{
 
 .main{
     display: grid;
-    max-width: 1400px;
+    max-width: 87.5rem;
     margin: 0 auto;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(5, 1fr);
@@ -65,7 +65,7 @@ body{
     margin-top: -.8rem;
 }
 
-.main__links{
+.main__links__container {
     display: none;
     background-color: white;
     text-decoration: none;
@@ -76,11 +76,27 @@ body{
     height: 6rem;
     align-items: center;
     justify-content: space-around;
+    /* list-style-type: none; */
+}
+
+.main__links{
+    /* display: none; */
+    display: flex;
+    /* background-color: white; */
+    text-decoration: none;
+    width: 100vw;
+    /* position: absolute; */
+    /* left: 0; */
+    /* top: 0; */
+    /* height: 6rem; */
+    align-items: center;
+    justify-content: space-around;
     list-style-type: none;
 }
 
 .icon__close {
-    margin-left: -2.5rem;
+    /* margin-left: -2.5rem; */
+    margin-left: 2.5rem;
 }
 
 .main__link {
@@ -170,7 +186,7 @@ body{
 
 }
 
-@media (min-width:768px){
+@media (min-width:48rem){
 
     .container{
         width: 85%;
@@ -208,16 +224,23 @@ body{
         display: none;
     }
 
-    .main__links{
+    .main__links__container{
         padding: 0;
         display: grid;
         grid-auto-flow: column;
-        gap: 2em;
-        margin-left: 10%;
+        /* gap: 2rem; */
+        /* margin-left: 10%; */
         background-color: transparent;
         justify-content: start;
         position: static;
         height: auto;
+    }
+
+    .main__links {
+        display: grid;
+        grid-auto-flow: column;
+        gap: 3rem;
+        justify-content: start;
     }
 
     .icon__close {
@@ -253,5 +276,13 @@ body{
 
     .main__control {
         cursor: pointer;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+        .main__link::before {
+            transition: none;
+        }
+        
     }
 }
