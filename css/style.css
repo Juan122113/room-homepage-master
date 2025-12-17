@@ -52,6 +52,14 @@ body{
     background-size: 100% 100%;
 }
 
+.hero--desk-1 {background-image: url("../images/desktop-image-hero-1.jpg");}
+.hero--desk-2 {background-image: url("../images/desktop-image-hero-2.jpg");}
+.hero--desk-3 {background-image: url("../images/desktop-image-hero-3.jpg");}
+
+.hero--mob-1 {background-image: url("../images/mobile-image-hero-1.jpg");}
+.hero--mob-2 {background-image: url("../images/mobile-image-hero-2.jpg");}
+.hero--mob-3 {background-image: url("../images/mobile-image-hero-3.jpg");}
+
 .main__nav{
     display: flex;
     margin-top: -.8rem;
