@@ -42,13 +42,12 @@ body{
     width: 90%;
     margin: 0 auto;
     overflow: hidden;
-    padding: 60px 0;
+    padding: 3.75rem 0;
 }
 
 .main__hero{
     grid-area: main;
-    /* background-image: url(../images/mobile-image-hero-1.jpg); */
-    min-height: 360px;
+    min-height: 22.5rem;
     background-size: 100% 100%;
 }
 
@@ -76,26 +75,18 @@ body{
     height: 6rem;
     align-items: center;
     justify-content: space-around;
-    /* list-style-type: none; */
 }
 
 .main__links{
-    /* display: none; */
     display: flex;
-    /* background-color: white; */
     text-decoration: none;
     width: 100vw;
-    /* position: absolute; */
-    /* left: 0; */
-    /* top: 0; */
-    /* height: 6rem; */
     align-items: center;
     justify-content: space-around;
     list-style-type: none;
 }
 
 .icon__close {
-    /* margin-left: -2.5rem; */
     margin-left: 2.5rem;
 }
 
@@ -114,8 +105,8 @@ body{
     align-self: end;
     justify-self: end;
     background-color: var(--Black);
-    width: 100px;
-    height: 50px;
+    width: 6.25rem;
+    height: 3.125rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -156,16 +147,16 @@ body{
     text-decoration: none;
     color: var(--Very-Dark-Gray);
     text-transform: uppercase;
-    letter-spacing: 4px;
+    letter-spacing: .25rem;
 }
 
 .main__arrow{
-    margin-left: 20px;
+    margin-left: 1.25rem;
 }
 
 .main__bg{
     grid-area: image1;
-    min-height: 250px;
+    min-height: 15.625rem;
     height: 100%;
     background-image: url(../images/image-about-dark.jpg);
     background-size: cover;
@@ -182,7 +173,7 @@ body{
 }
 
 .attribution{
-    font-size: 12px;
+    font-size: 0.75rem;
 
 }
 
@@ -190,7 +181,7 @@ body{
 
     .container{
         width: 85%;
-        padding: 70px 0;
+        padding: 4.375rem 0;
     }
 
     .main{
@@ -206,7 +197,6 @@ body{
     }
 
     .main__hero {
-        /* background-image: url(../images/desktop-image-hero-1.jpg); */
         height: 100%;
         min-height: 100%;
     }
@@ -228,8 +218,6 @@ body{
         padding: 0;
         display: grid;
         grid-auto-flow: column;
-        /* gap: 2rem; */
-        /* margin-left: 10%; */
         background-color: transparent;
         justify-content: start;
         position: static;
@@ -283,6 +271,6 @@ body{
         .main__link::before {
             transition: none;
         }
-        
+
     }
 }
