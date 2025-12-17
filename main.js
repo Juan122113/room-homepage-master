@@ -38,7 +38,7 @@ iconClose.addEventListener('click', () => {
 //     console.log(indexImages);
 // }
 
-function updateHeroBackground(indexImages) {
+function updateHeroBackground() {
     mainHero.className = "main__hero";
 
     const isMobile = window.innerWidth > 768;
@@ -46,7 +46,7 @@ function updateHeroBackground(indexImages) {
 
     mainHero.classList.add(`hero--${device}-${indexImages + 1}`);
     
-    console.log("updateHeroBackground")
+    console.log("updateHeroBackground running")
 }
 
 function changingTitles(indexImages) {
@@ -58,7 +58,7 @@ function changingParagraphs(indexImages) {
 }
 
 // window.addEventListener("resize", handleResize);
-window.addEventListener("resize", updateHeroBackground());
+window.addEventListener("resize", updateHeroBackground);
 
 iconAngleRight.addEventListener('click', () => {
             
@@ -71,7 +71,7 @@ iconAngleRight.addEventListener('click', () => {
     // handleResize();
     changingTitles(indexImages);
     changingParagraphs(indexImages);
-    updateHeroBackground(indexImages);
+    updateHeroBackground();
 
 });
 
@@ -86,13 +86,13 @@ iconAngleLeft.addEventListener('click', () => {
     // handleResize();
     changingTitles(indexImages);
     changingParagraphs(indexImages);
-    updateHeroBackground(indexImages);
+    updateHeroBackground();
     
 });
 
 // handleResize();
 changingTitles(indexImages);
 changingParagraphs(indexImages);
-updateHeroBackground(indexImages);
+updateHeroBackground();
 
 console.log(indexImages);
