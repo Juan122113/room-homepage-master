@@ -6,6 +6,7 @@ const iconAngleLeft = document.querySelector('[data-js="icon-angle-left"]');
 const iconAngleRight = document.querySelector('[data-js="icon-angle-right"]');
 const mainTitle = document.querySelector('[data-js="main-title"]');
 const mainParagraph = document.querySelector('[data-js="main-paragraph"]');
+const mainContent = document.querySelector('[data-js="main-content"]');
 
 let indexImages = 0;
 
@@ -44,6 +45,7 @@ function updateHeroBackground() {
     // console.log("updateHeroBackground running")
 
     transitionMainHero1();
+    transitionMainContent1();
     waitFunc();
 }
 
@@ -99,6 +101,51 @@ function transitionMainHero2() {
     console.log("transition ok");
 }
 
+function transitionMainContent1() {
+    // mainHero.style.transform = "translateX(-100%)";
+    // mainHero.style.transform = "translateX(0%)";
+    // mainHero.style.transition = "transform 1s ease";
+
+    // if (mainHero.classList != "hero--transition-2") {
+    //     mainHero.classList.add("hero--transition-1");
+    // }
+
+    // mainHero.classList.remove("hero--transition-2");
+    // console.log(mainHero.classList, "1");
+    // mainHero.classList.replace("hero--transition-2", "hero--transition-1");
+    mainContent.classList.remove("main__content--transition-2");
+    mainContent.classList.add("main__content--transition-1");
+    // console.log(mainHero.classList, "2");
+    // mainHero.classList.add("hero--transition-2");
+    // mainHero.classList.replace("hero--transition-1", "hero--transition-2");
+    // console.log(mainHero.classList, "3");
+    // mainHero.classList.replace("hero--transition-1", "hero--transition-2");
+
+    console.log("transition ok");
+}
+
+function transitionMainContent2() {
+    // mainHero.style.transform = "translateX(-100%)";
+    // mainHero.style.transform = "translateX(0%)";
+    // mainHero.style.transition = "transform 1s ease";
+
+    // if (mainHero.classList != "hero--transition-2") {
+    //     mainHero.classList.add("hero--transition-1");
+    // }
+
+    // mainHero.classList.remove("hero--transition-2");
+    // console.log(mainHero.classList, "1");
+    // mainHero.classList.replace("hero--transition-2", "hero--transition-1");
+    mainContent.classList.replace("main__content--transition-1", "main__content--transition-2");
+    // console.log(mainHero.classList, "2");
+    // mainHero.classList.add("hero--transition-2");
+    // mainHero.classList.replace("hero--transition-1", "hero--transition-2");
+    // console.log(mainHero.classList, "3");
+    // mainHero.classList.replace("hero--transition-1", "hero--transition-2");
+
+    console.log("transition ok");
+}
+
 // function transformMainHero() {
 //     mainHero.style.transform = "translateX(-100%)";
 // }
@@ -107,11 +154,20 @@ function transitionMainHero2() {
 //     mainHero.style.transform = "translateX(-100%)";
 // }
 
+// It generates a minimal delay so that the transition functions can work correctly.
 const waitFunc = async() => {
     await new Promise(resolve => setTimeout(resolve, 10));
 
-    transitionMainHero2()
+    transitionMainHero2();
+    transitionMainContent2();
 }
+
+// const waitFunc2 = async() => {
+//     await new Promise(resolve => setTimeout(resolve, 10));
+
+//     // transitionMainHero2();
+//     transitionMainContent2();
+// }
 
 window.addEventListener("resize", updateHeroBackground);
 
@@ -135,10 +191,12 @@ iconAngleRight.addEventListener('click', () => {
     // }
     // resetMainHeroTranslate();
     transitionMainHero1();
+    transitionMainContent1();
     // setTimeout(resolve => resolve, 1000);
     // setTimeout(transitionMainHero2(), 1000);
     // new Promise(resolve => setTimeout(resolve, 200));
     waitFunc();
+    waitFunc2();
     // transitionMainHero2()
 });
 
@@ -154,7 +212,9 @@ iconAngleLeft.addEventListener('click', () => {
     changingParagraphs();
     updateHeroBackground();
     transitionMainHero1();
+    transitionMainContent1();
     waitFunc();
+    waitFunc2();
 });
 
 changingTitles();
@@ -162,8 +222,10 @@ changingParagraphs();
 updateHeroBackground();
 // resetMainHeroTranslate();
 transitionMainHero1();
+transitionMainContent1();
 // transitionMainHero2();
 waitFunc();
+waitFunc2();
 
 
 // console.log(indexImages);
