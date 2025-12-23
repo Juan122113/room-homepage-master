@@ -28,14 +28,23 @@ iconClose.addEventListener('click', () => {
 });
 
 function updateHeroBackground() {
+
     mainHero.className = "main__hero";
 
-    const isMobile = window.innerWidth > 768;
+    const isMobile = window.innerWidth < 768;
+    console.log(isMobile);
     const device = isMobile ? "mob" : "desk";
+    // const device = isMobile ? "desk" : "mob";
+
+    console.log(window.innerWidth);
+    console.log(device);
 
     mainHero.classList.add(`hero--${device}-${indexImages + 1}`);
     
     // console.log("updateHeroBackground running")
+
+    transitionMainHero1();
+    waitFunc();
 }
 
 function changingTitles() {
@@ -56,13 +65,13 @@ function transitionMainHero1() {
     // }
 
     // mainHero.classList.remove("hero--transition-2");
-    console.log(mainHero.classList, "1");
+    // console.log(mainHero.classList, "1");
     // mainHero.classList.replace("hero--transition-2", "hero--transition-1");
     mainHero.classList.add("hero--transition-1");
-    console.log(mainHero.classList, "2");
+    // console.log(mainHero.classList, "2");
     // mainHero.classList.add("hero--transition-2");
     // mainHero.classList.replace("hero--transition-1", "hero--transition-2");
-    console.log(mainHero.classList, "3");
+    // console.log(mainHero.classList, "3");
     // mainHero.classList.replace("hero--transition-1", "hero--transition-2");
 
     console.log("transition ok");
@@ -78,13 +87,13 @@ function transitionMainHero2() {
     // }
 
     // mainHero.classList.remove("hero--transition-2");
-    console.log(mainHero.classList, "1");
+    // console.log(mainHero.classList, "1");
     // mainHero.classList.replace("hero--transition-2", "hero--transition-1");
     mainHero.classList.replace("hero--transition-1", "hero--transition-2");
-    console.log(mainHero.classList, "2");
+    // console.log(mainHero.classList, "2");
     // mainHero.classList.add("hero--transition-2");
     // mainHero.classList.replace("hero--transition-1", "hero--transition-2");
-    console.log(mainHero.classList, "3");
+    // console.log(mainHero.classList, "3");
     // mainHero.classList.replace("hero--transition-1", "hero--transition-2");
 
     console.log("transition ok");
@@ -99,9 +108,8 @@ function transitionMainHero2() {
 // }
 
 const waitFunc = async() => {
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    await new Promise(resolve => setTimeout(resolve, 10));
 
-    
     transitionMainHero2()
 }
 
@@ -146,7 +154,7 @@ iconAngleLeft.addEventListener('click', () => {
     changingParagraphs();
     updateHeroBackground();
     transitionMainHero1();
-    
+    waitFunc();
 });
 
 changingTitles();
@@ -154,7 +162,8 @@ changingParagraphs();
 updateHeroBackground();
 // resetMainHeroTranslate();
 transitionMainHero1();
-transitionMainHero2();
+// transitionMainHero2();
+waitFunc();
 
 
 // console.log(indexImages);
